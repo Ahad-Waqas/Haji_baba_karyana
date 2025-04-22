@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Base circle -->
+  <circle cx="50" cy="50" r="45" fill="#3498db" />
+  
+  <!-- Inner circle -->
+  <circle cx="50" cy="50" r="35" fill="white" />
+  
+  <!-- Box representation -->
+  <rect x="30" y="35" width="40" height="30" fill="#3498db" rx="2" />
+  
+  <!-- Box lid -->
+  <path d="M30 35 L50 25 L70 35 Z" fill="#2980b9" />
+  
+  <!-- Box front details -->
+  <rect x="40" y="45" width="20" height="5" fill="white" rx="1" />
+  <rect x="40" y="55" width="20" height="5" fill="white" rx="1" />
+</svg>

@@ -1,1 +1,92 @@
-<h1>Haji baba karyana</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>haji baba karyana store System</title>
+    <!-- Import Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.svg" alt="Inventory System Logo" class="logo">
+            <h1>haji baba karyana store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="pages/products.html">Products</a></li>
+                <li><a href="pages/add-item.html">Add Item</a></li>
+                <li><a href="pages/scan-qr.html">Scan QR</a></li>
+                <li><a href="pages/reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <h2>Dashboard Overview</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Total Items</h3>
+                    <p class="stat-number" id="totalItems">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Low Stock</h3>
+                    <p class="stat-number" id="lowStockItems">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Out of Stock</h3>
+                    <p class="stat-number" id="outOfStockItems">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Categories</h3>
+                    <p class="stat-number" id="totalCategories">0</p>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <button id="showMore" class="show-more-btn">Show More</button>
+                <div class="activity-list" id="recentActivities">
+                    
+                </div>
+                <div class="activity-list hidden" id="moreActivities">
+                    
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-buttons">
+                    <a href="pages/add-item.html" class="action-btn">
+                        <span>Add Item</span>
+                    </a>
+                    <a href="pages/scan-qr.html" class="action-btn">
+                        <span>Scan QR</span>
+                    </a>
+                    <a href="pages/reports.html" class="action-btn">
+                        <span>Generate Report</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 haji baba karyana store System</p>
+            <p id="currentDateTime">Current Date and Time: Loading...</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
