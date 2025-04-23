@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
     <header>
@@ -20,10 +22,7 @@
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Dashboard</a></li>
-                <li><a href="pages/products.html">Products</a></li>
                 <li><a href="pages/add-item.html">Add Item</a></li>
-                <li><a href="pages/scan-qr.html">Scan QR</a></li>
-                <li><a href="pages/reports.html">Reports</a></li>
             </ul>
         </nav>
     </header>
@@ -65,12 +64,15 @@
                 <h3>Quick Actions</h3>
                 <div class="action-buttons">
                     <a href="pages/add-item.html" class="action-btn">
+                        <img src="assets/icons/add.svg" alt="Add">
                         <span>Add Item</span>
                     </a>
                     <a href="pages/scan-qr.html" class="action-btn">
+                        <img src="assets/icons/scan.svg" alt="Scan">
                         <span>Scan QR</span>
                     </a>
                     <a href="pages/reports.html" class="action-btn">
+                        <img src="assets/icons/edit.svg" alt="Report">
                         <span>Generate Report</span>
                     </a>
                 </div>
@@ -87,6 +89,6 @@
 
     <button id="backToTop" class="back-to-top">↑</button>
 
-    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
