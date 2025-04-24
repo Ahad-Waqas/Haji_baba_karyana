@@ -2,88 +2,88 @@
 const INVENTORY_STORAGE_KEY = 'inventory_data';
 const ACTIVITY_STORAGE_KEY = 'activity_data';
 
-const mockInventoryData = [
-    { 
-        id: 'P001', 
-        name: 'Wireless Mouse', 
-        category: 'electronics', 
-        stock: 47, 
-        price: 24.99, 
-        lastUpdated: '2025-04-15' 
-    },
-    { 
-        id: 'P002', 
-        name: 'Mechanical Keyboard', 
-        category: 'electronics', 
-        stock: 25, 
-        price: 89.99, 
-        lastUpdated: '2025-04-19' 
-    },
-    { 
-        id: 'P003', 
-        name: 'Office Chair', 
-        category: 'furniture', 
-        stock: 12, 
-        price: 199.99, 
-        lastUpdated: '2025-04-10' 
-    },
-    { 
-        id: 'P004', 
-        name: 'Desk Lamp', 
-        category: 'office', 
-        stock: 30, 
-        price: 34.50, 
-        lastUpdated: '2025-04-05' 
-    },
-    { 
-        id: 'P005', 
-        name: 'External Hard Drive', 
-        category: 'electronics', 
-        stock: 18, 
-        price: 79.99, 
-        lastUpdated: '2025-04-18' 
-    },
-    { 
-        id: 'P006', 
-        name: 'Notebook Pack', 
-        category: 'office', 
-        stock: 85, 
-        price: 12.99, 
-        lastUpdated: '2025-04-02' 
-    },
-    { 
-        id: 'P007', 
-        name: 'Wireless Headphones', 
-        category: 'electronics', 
-        stock: 5, 
-        price: 149.99, 
-        lastUpdated: '2025-04-12' 
-    },
-    { 
-        id: 'P008', 
-        name: 'Standing Desk', 
-        category: 'furniture', 
-        stock: 0, 
-        price: 349.99, 
-        lastUpdated: '2025-04-01' 
-    },
-    { 
-        id: 'P009', 
-        name: 'Wireless Keyboard', 
-        category: 'electronics', 
-        stock: 22, 
-        price: 59.99, 
-        lastUpdated: '2025-04-14' 
-    },
-    { 
-        id: 'P010', 
-        name: 'Monitor', 
-        category: 'electronics', 
-        stock: 3, 
-        price: 199.99, 
-        lastUpdated: '2025-04-17' 
-    }
-];
+// const mockInventoryData = [
+//     { 
+//         id: 'P001', 
+//         name: 'Wireless Mouse', 
+//         category: 'electronics', 
+//         stock: 47, 
+//         price: 24.99, 
+//         lastUpdated: '2025-04-15' 
+//     },
+//     { 
+//         id: 'P002', 
+//         name: 'Mechanical Keyboard', 
+//         category: 'electronics', 
+//         stock: 25, 
+//         price: 89.99, 
+//         lastUpdated: '2025-04-19' 
+//     },
+//     { 
+//         id: 'P003', 
+//         name: 'Office Chair', 
+//         category: 'furniture', 
+//         stock: 12, 
+//         price: 199.99, 
+//         lastUpdated: '2025-04-10' 
+//     },
+//     { 
+//         id: 'P004', 
+//         name: 'Desk Lamp', 
+//         category: 'office', 
+//         stock: 30, 
+//         price: 34.50, 
+//         lastUpdated: '2025-04-05' 
+//     },
+//     { 
+//         id: 'P005', 
+//         name: 'External Hard Drive', 
+//         category: 'electronics', 
+//         stock: 18, 
+//         price: 79.99, 
+//         lastUpdated: '2025-04-18' 
+//     },
+//     { 
+//         id: 'P006', 
+//         name: 'Notebook Pack', 
+//         category: 'office', 
+//         stock: 85, 
+//         price: 12.99, 
+//         lastUpdated: '2025-04-02' 
+//     },
+//     { 
+//         id: 'P007', 
+//         name: 'Wireless Headphones', 
+//         category: 'electronics', 
+//         stock: 5, 
+//         price: 149.99, 
+//         lastUpdated: '2025-04-12' 
+//     },
+//     { 
+//         id: 'P008', 
+//         name: 'Standing Desk', 
+//         category: 'furniture', 
+//         stock: 0, 
+//         price: 349.99, 
+//         lastUpdated: '2025-04-01' 
+//     },
+//     { 
+//         id: 'P009', 
+//         name: 'Wireless Keyboard', 
+//         category: 'electronics', 
+//         stock: 22, 
+//         price: 59.99, 
+//         lastUpdated: '2025-04-14' 
+//     },
+//     { 
+//         id: 'P010', 
+//         name: 'Monitor', 
+//         category: 'electronics', 
+//         stock: 3, 
+//         price: 199.99, 
+//         lastUpdated: '2025-04-17' 
+//     }
+// ];
 
 document.addEventListener('DOMContentLoaded', function() {
     const productTableBody = document.getElementById('productTableBody');

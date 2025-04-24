@@ -4,12 +4,13 @@ let scanInterval = null;
 let codeReader = null;
 let scannedItems = [];
 let scannerSound = null;
-let autoAddToBatch = true; 
+let autoAddToBatch = true; // Set default to auto-add
 
 const INVENTORY_STORAGE_KEY = 'inventory_data';
 const ACTIVITY_STORAGE_KEY = 'activity_data';
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Create and preload the scanner sound
     scannerSound = new Audio();
     scannerSound.src = 'https://cdn.freesound.org/previews/233/233237_3537605-lq.mp3'; // Barcode scanner beep sound
     scannerSound.load();
@@ -33,6 +34,7 @@ function initQRScanner() {
     
     if (!startScanBtn || !stopScanBtn || !cameraSelect || !videoElement) return;
     
+    // Add toggle button for auto-add functionality
     createAutoAddToggle();
     
     codeReader = new ZXing.BrowserMultiFormatReader();
@@ -171,7 +173,7 @@ function startCamera(deviceId) {
     
     codeReader.decodeFromConstraints({ video: constraints }, videoElement, (result, error) => {
         if (result) {
-            playSuccessSound(); 
+            playSuccessSound(); // Play scanner sound when a code is detected
             handleSuccessfulScan(result);
         } else if (error && !(error instanceof ZXing.NotFoundException)) {
             console.error('Scanning error:', error);
@@ -184,12 +186,14 @@ function startCamera(deviceId) {
     showScanResult("Scanning for codes...", "info");
 }
 
-
+// Function to play the scanner sound
 function playSuccessSound() {
     if (scannerSound) {
+        // Reset the audio to the beginning if it's already playing
         scannerSound.pause();
         scannerSound.currentTime = 0;
         
+        // Play the beep sound
         scannerSound.play().catch(err => {
             console.warn('Could not play scanner sound:', err);
         });
@@ -246,9 +250,11 @@ function handleSuccessfulScan(result) {
     
     showScanResult(resultHTML);
     
+    // Auto-add to batch if enabled
     if (autoAddToBatch) {
         addItemToBatch(product, codeValue, formatName);
         
+        // Short delay before resuming scanning to allow user to see results
         setTimeout(() => {
             startCamera(document.getElementById('cameraSelect').value);
         }, 3500); // 1.5 second delay

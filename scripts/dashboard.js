@@ -104,21 +104,3 @@ function formatActivityTime(timestamp) {
         return activityDate.toLocaleDateString('en-US', options);
     }
 }
-
-function updateDateTime() {
-    const dateTimeElement = document.getElementById('currentDateTime');
-    if (!dateTimeElement) return;
-
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    };
-    
-    const formattedDateTime = now.toLocaleDateString('en-US', options);
-    dateTimeElement.textContent = `Current Date and Time: ${formattedDateTime}`;
-}
