@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan QR - haji baba karyana store System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link rel="stylesheet" href="../styles/qr-styles.css">
+    
+    
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="../assets/logo.svg" alt="Inventory System Logo" class="logo">
+            <h1>haji baba karyana store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="add-item.html">Add Item</a></li>
+                <li><a href="scan-qr.html" class="active">Scan QR</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="scan-qr">
+            <h2>Barcode &amp; QR Scanner</h2>
+            <p class="section-description">Scan items to quickly add or remove them from inventory in batches.</p>
+            
+            <div class="scanner-container">
+                <div class="video-container">
+                    <video id="qr-video" playsinline></video>
+                    <div class="scanner-overlay">
+                        <div class="scanner-boundary"></div>
+                    </div>
+                </div>
+                
+                <div class="scanner-controls">
+                    <button id="startScanBtn" class="btn-primary">Start Camera</button>
+                    <button id="stopScanBtn" class="btn-secondary" disabled>Stop Camera</button>
+                    <select id="cameraSelect" class="camera-select">
+                        <option value="">Select Camera</option>
+                    </select>
+                </div>
+                
+                <div class="scan-result">
+                    <h3>Scan Result</h3>
+                    <div id="scanResult" class="result-container info">
+                        <p>No data scanned yet. Point camera at a QR code or barcode.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="batch-action-panel" id="batchActionPanel">
+                <h3>Batch Items (<span id="itemCount">0</span>)</h3>
+                <div id="scannedItemsList" class="scanned-items-list"></div>
+                <div class="batch-actions">
+                    <button id="applyBatchBtn" class="btn-primary" disabled>Apply Changes</button>
+                    <button id="clearBatchBtn" class="btn-secondary" disabled>Clear All</button>
+                </div>
+            </div>
+            
+            <div class="qr-instructions">
+                <h3>How to Use Scanner</h3>
+                
+                <div id="instructionsContent" class="instructions-content">
+                    <ol>
+                        <li>Click "Start Camera" to activate your device's camera.</li>
+                        <li>If you have multiple cameras, select the appropriate one from the dropdown.</li>
+                        <li>Point your camera at a barcode or QR code.</li>
+                        <li>Hold steady until the code is recognized.</li>
+                        <li>The product information will appear in the result section.</li>
+                        <li>Click "Add to Batch" to add the scanned item to your working list.</li>
+                        <li>For each item in the batch, you can:
+                            <ul>
+                                <li>Choose whether to add or remove the item from inventory</li>
+                                <li>Adjust the quantity using the + and - buttons</li>
+                                <li>Remove the item from the batch entirely</li>
+                            </ul>
+                        </li>
+                        <li>Click "Apply Changes" when you're ready to update the inventory.</li>
+                        <li>Click "Clear All" to start over with an empty batch.</li>
+                        <li>Click "Stop Camera" when finished to conserve battery.</li>
+                    </ol>
+                    <p>Note: You may need to grant camera permissions to use this feature.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 haji baba karyana store System</p>
+            <p id="currentDateTime">Current Date and Time: Loading...</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <!-- Load ZXing library directly -->
+    <script src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
+    
+    <!-- Load app scripts -->
+    <script src="../scripts/qr-scanner.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/utilities.js"></script>
+</body>
+</html>
